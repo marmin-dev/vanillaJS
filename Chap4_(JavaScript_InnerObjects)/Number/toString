@@ -1,0 +1,4 @@
+let x = 123;
+x.toString();
+let fi = x===x.toString;
+console.log(fi);
