@@ -3,3 +3,4 @@ let sum = points.reduce(function(total,currentValue){
     return total + currentValue;
 });
 console.log(sum);
+//181
