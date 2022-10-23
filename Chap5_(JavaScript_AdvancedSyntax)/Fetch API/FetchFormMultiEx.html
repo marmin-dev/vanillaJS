@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title></title>
+    </head>
+    <body>
+       <script>
+        let formData = new FormData();//FormData객체 생성. FormData는
+        //파일을 포함한 데이터를 전송할 수 있도록 해주는 객체입니다.
+        let fileField = document.querySelector('input[type="file"]');
+        //사용자가 선택한 파일
+        formData.append('title','My Photos');
+        for(let i =0;i<photos.file.length;i++){
+            formData.append('photos',photos.files[i]);
+        }
+        fetch('url',{
+            method:'POST',
+            body: formData
+        })
+        .then(Response => Response.json())
+        .catch(error=>console.error('Error:',error))
+        .then(Response=>console.log('Success',JSON.stringify(Response)));
+       </script> 
+    </body>
+</html>
