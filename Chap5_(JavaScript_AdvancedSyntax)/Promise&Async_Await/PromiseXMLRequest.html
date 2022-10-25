@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function getDataPromise(){
+                return new Promise((resolve,reject)=>{
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET","https://jsonplaceholder.typicode.com/posts/1")
+                xhr.setRequestHeader("content-type","application/json");
+                xhr.send();
+                
+                xhr.onload = () => {
+                    if(xhr.status === 200){//정상적으로 응답되면 status가 200
+                        const res = JSON.parse(xhr.response);
+                        //응답 데이터를ㄹ JSON.parse 함수의 JSON 객체로 변경
+                        resolve(res);
+                    }else{
+                        //에러 발생
+                        console.error(xhr.status,xhr.statusText);
+                        reject(new Error(xhr.status));
+                    }
+                };
+                });
+            }
+            getDataPromise().then((res)=>{
+                console.log(res);
+                console.log("다음 코드를 실행합니다");
+            });
+        </script>
+    </body>
+</html>
