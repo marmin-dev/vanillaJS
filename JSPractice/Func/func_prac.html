@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Function</title>
+    </head>
+    <body>
+        <h1>Function(함수)</h1>
+        <p>함수에 대해 알아보자</p>
+        <script>
+            function taxCal(salesPrice){
+                let vat = 0.1;
+                let tax = salesPrice * vat;
+                return tax;
+            }
+            let todaySales = 200000;
+            console.log(taxCal(todaySales));
+        </script>
+        <p>부가세를 계산하는 프로그램을 작성했다</p>
+        <p>만약 세율에 변화가 있다면 그저 함수 내 vat value를 변화된 세율로 바꾼다면</p>
+        <p>이 함수를 사용하는 모든 부분에 코드를 수정 할 필요가 없다</p>
+    </body>
+</html>

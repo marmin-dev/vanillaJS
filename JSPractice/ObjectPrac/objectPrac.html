@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Object</title>
+    </head>
+    <body>
+        <h1>Object객체</h1>
+        <p>내장 객체(built-in)Object는 브라우저의 스크립트 엔진에 내장된 객체를 이야기한다</p>
+        <script>
+            let person = new Object();
+            person.age=43;
+            person.job="Mechanic";
+            person.wife="Jessy";
+            person.infoView = function(){
+                return person.age+" "+person.job+" "+person.wife;
+            };
+            console.log(person.infoView());
+        </script>
+    </body>
+</html>

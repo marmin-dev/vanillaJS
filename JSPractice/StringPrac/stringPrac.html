@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>String</title>
+    </head>
+    <body>
+        <h1>String</h1>
+    <p>String 객체의 유용한 property와 function을 알아보자</p>
+    <h2>length</h2>
+    <script>
+        let txt = "track suit and red wine movies for two";
+        console.log(txt.length);
+    </script>
+    <p>txt의 길이 반환</p>
+    <h2>indexOf</h2>
+    <p>문자열 내부의 특정문자열이 있는지 찾고 문자열이 시작되는 index를 반환하는 함수</p>
+    <p>문자열을 찾지 못하면 -1을 반환한다
+    </p>
+    <script>
+        let pos = txt.indexOf("suit");
+        console.log(pos);
+    </script>
+    <h2>lastIndexOf</h2>
+    <p>문자열 내부에 특정 문자열이 존재하는지 찾는 것은 동일하나 중복된 문자열이 있으면</p>
+    <p>특정 문자열의 마지막에 발견된 문자열의 index를 반환하는 함수</p>
+    <p>특정 문자열을 찾지 못하면 -1을 반환</p>
+    <h2>slice</h2>
+    <p>silce 함수는 파라미터로 시작 위치와 종료 위치를 주면, 문자열에서 해당 부분은 잘라내서 반환</p>
+    <script>
+        let res = txt.slice(0,5);
+        console.log(res);
+    </script>
+    <p>마지막 5번 인덱스는 포함하지 않는다</p>
+    </body>
+</html>
