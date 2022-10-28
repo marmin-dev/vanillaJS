@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>this to Window Binding</title>
+    </head>
+    <body>
+        <h1>this에 window 객체가 바인딩 된 경우</h1>
+        <p>스크립트 태그 루트와 스크립트 안에 선언된 함수 내에서 this는 window 객체가 됩니다</p>
+        <p>this 키워드가 window객체이므로 window 객체 내의 모든 내장 함수를 사용이 가능하다</p>
+        <script>
+            console.log(this); //window객체
+
+            function myFunction(){
+                console.log(this);//window 객체
+            }
+
+            myFunction();
+        </script>
+    </body>
+</html>

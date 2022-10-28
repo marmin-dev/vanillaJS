@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>DefaultFunctionParameter</title>
+    </head>
+    <body>
+        <h1>Default Function Parameter</h1>
+        <p>함수를 호출할 때 함수의 파라미터인 message 값을 전달하지 않으면, 함수내에서 message</p>
+        <p>는 undefined가 됩니다. 만약 파라미터가 함수 내에서 특정 기능을 하기위해 반드시 값이 필요한 상태라면</p>
+        <p>함수를 호출하는 곳에서 파라미터 값을 전달하지 못해서 에러가 발생하게 된다</p>
+        <p>이런 상황을 피하고자 함수 내에서는 함수를 호출 할 때 파라미터에 값이 전달되었는지 확인하는 코드를 구현해서 사용하여야 한다</p>
+        <script>
+            function say(message){
+                if(message != undefined){//파라미터에 값이 전달되었는지 확인
+                    console.log(message);
+                }else{
+                    console.log("파라미터가 넘어오지 않았어요");
+                }
+            }
+            say();
+
+            function say1(message="파라미터가 넘어오지 않았어요"){
+                console.log(message);
+            }
+            say1();
+        </script>
+        <p>Default Function Parameter는 함수 호출 시 파라미터가 전달되지 않았을 시 사용할</p>
+        <p>기본값을 설정하는 기능입니다. 함수 선언문에서 파라미터를 선언할 때 기본값을 다음 예제와 같이 선언하면</p>
+        <p>파라미터 값이 전달되면 전달된 값을 사용, 아닐시 디폴트값전송</p>
+    </body>
+</html>
