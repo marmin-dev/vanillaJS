@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>GET 요청하기</title>
+    </head>
+    <body>
+        <script>
+            fetch("http://localhost:3000/comments")
+            .then((Response) => Response.json())
+            .then((json)=>console.log(json));//전체 데이터 조회
+
+            fetch("http://localhost:3000/comments/1")
+            .then((Response)=>Response.json())
+            .then((json)=>console.log(json));//id로 조회
+
+            fetch("http://localhost:3000/comments/comments?postId=1")
+            .then((Response)=>Response.json())
+            .then((json)=>console.log(json));//query로 postId=1로 조회
+        </script>
+    </body>
+</html>
