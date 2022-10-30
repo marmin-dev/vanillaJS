@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>POST</title>
+    </head>
+    <body>
+        <h2>POST XML-HttpRequest</h2>
+        <p>open() 함수와 setRequestHeader() 함수로 요청에 필요한 정의가 끝나면 최종적으로</p>
+        <p>send() 함수를 통해 요청을 보내게 된다 이때 서버로 전송할 데이터가 있다면 send() 함수에 매개변수로 데이터를 전달하면 된다</p>
+        <p>전달된 데이터는 request의 body에 담겨 전송된다</p>
+        <br>
+        <p>단, HTTP 요청 방법이 GET인 경우는 send() 함수에 매개변수로 데이터를 전달해도 전달한 데이터는 실제로는 전송되지 않는다</p>
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST","/posts/");
+            xhr.setRequestHeader("content-type","application/json");
+            const data = {
+                id:1,
+                title:"XHR",
+                author:"Jeremy",
+            };
+            xhr.send(JSON.stringify(data));
+        </script>
+        <h2>Response</h2>
+        <p>클라이언트로 서버로 요청(Request)을 전송하면, 서버는 요청한 결과를 응답(Response)하게 된다</p>
+        <p>XML-HttpRequest객체가 발생시키는 이벤트를 통해서 서버가 전송한 응답처리를 할 수 있다</p>
+        <script>
+            xhr.open("GET","/posts");
+            xhr.setRequestHeader("content-type","application/json"); 
+            xhr.send();
+            xhr.onload=()=>{
+                if(xhr.status === 200){
+                    const res = JSON.parse(xhr.response);
+                    console.log(res);
+                }else{
+                    console.error(xhr.status,xhr.statusText);
+                }
+            }
+        </script>
+    </body>
+</html>

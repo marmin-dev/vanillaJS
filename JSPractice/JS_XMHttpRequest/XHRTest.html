@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>TEST</title>
+    </head>
+    <body>
+        <h1>TEST</h1>
+        <p>가짜 서버를 만들어서 Test 하기</p>
+        <p>JSONPlaceholder라는 테스트를 위한 가짜 서버 서비스를 이용</p>
+        <br>
+        <p>JSONPlaceholder 에서는 다음과 같이 테스트를 위한 리소스를 제공한다</p>
+        <tbody>
+            <tr>/posts</tr>
+            <tr>/commets</tr>
+            <tr>/albums</tr>
+            <tr>/photos</tr>
+            <tr>/todos</tr>
+            <tr>/users</tr>
+        </tbody>
+        <h2>GET</h2>
+        <p>다음과 같이 open() 함수으 URL에 "https://jsonplaceholder.typicode.com/posts"</p>
+        <p>를 인수로 넘기면 100개의 데이터를 받아오게 된다</p>
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET","https://jsonplaceholder.typicode.com/posts");
+            xhr.setRequestHeader("content-type","application/json");
+            xhr.send();
+
+            xhr.onload=()=>{
+                if(xhr.status=200){
+                    const res = JSON.parse(xhr.response);
+                    console.log("정상 응답----데이터 불러오기")
+                    console.log(res);
+                }else{
+                    console.error(xhr.status, xhr.statusText);
+                }
+            };
+        </script>
+        <h2>POST</h2>
+        <p>201 상태 코드는 요청이 성공적으로 처리되었으며, 자원이 생성되었음을 나타내는 성공 상태 응답 코드이다</p>
+        <script>
+            xhr.open("POST","https://jsonplaceholder.typicode.com/posts");
+            xhr.setRequestHeader("content-type","application/json; charset=UTF-8");
+            xhr.send(JSON.stringify({tite:"foo",body:"bar",userId:1}));
+            xhr.onload =()=>{
+                if(xhr.status === 201){
+                    const res2 = JSON.parse(xhr.response);
+                    console.log(res2) 
+                }else{
+                    console.error(xhr.status,xhr.statusText);
+                }
+            };
+        </script>
+        <h2>PUT</h2>
+        <p>데이터가 1인 데이터를 수정하기</p>
+        <script>
+            xhr.open("PUT","https://jsonplaceholder.typicode.com/posts/1");
+            xhr.setRequestHeader("content-type","application/json charset=UTF-8");
+            xhr.send(JSON.stringify({title:"The Great Marmin",body:"The world's greatest Marmin", userId:1}));
+
+            xhr.onload=()=>{
+                if(xhr.status===200){
+                    const res3 = JSON.parse(xhr.response);
+                    console.log(res3);
+                }else{
+                    console.error(xhr.status,xhr.statusText);
+                }
+            };
+        </script>
+
+    </body>
+</html>
