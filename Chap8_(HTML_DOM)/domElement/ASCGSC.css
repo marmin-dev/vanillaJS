@@ -1,0 +1,9 @@
+/* 인접 형제 선택자 */
+h1 + ul{
+    background: blue;
+}
+
+/* 일반 형제 선택자 */
+h1~ul{
+    background: green;
+}

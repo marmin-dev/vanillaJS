@@ -1,0 +1,10 @@
+/* 하위 선택자 */
+section ul{
+    border: 1px dotted black;
+    font-size: 14pt;
+}
+/* 자식 선택자 */
+section>ul{
+    border: 1px dotted black;
+    font-size: 14pt;
+}

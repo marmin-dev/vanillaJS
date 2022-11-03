@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <button onclick="doSave(event);">저장</button>
+        <script>
+            function doSave(e){
+                let obj = e.target;
+                obj.disabled = true;
+                //사용자가 중복해서 버튼 클릭하지 못하게함
+                //저장을 실해하는 코드 작성
+                setTimeout(function(){
+                    //저장완료까지 2초가 소요된것으로 가정,
+                    //2초 후 버튼을 enabled
+                    obj.disabled = false;
+                },2000);
+            }
+        </script>
+    </body>
+</html>
