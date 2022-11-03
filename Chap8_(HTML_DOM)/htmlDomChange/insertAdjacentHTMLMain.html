@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id ="myUl">
+            <!-- afterbegin -->
+            <li>항목 1</li>
+            <li>항목 2</li>
+            <li>항목 3</li>
+            <li>항목 4</li>
+            <!-- beforeend -->
+        </ul>
+        <!-- afterend -->
+        <button onclick="myFunction()">항목추가</button>
+        <script>
+            function myFunction(){
+            let h = document.getElementById("myUl");
+            h.insertAdjacentHTML("afterbegin","<li>새로운 항목</li>");
+            }
+        </script>
+    </body>
+</html>
