@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" onkeypress="myFunction(event);"
+        onkeydown="myFunction(event);"
+        onkeyup="myFunction(event);"/>
+        <script>
+            function myFunction(e){
+                console.log(e.type);//이벤트 이름출력
+                console.log(e.target);//이벤트 발생시킨 DOM요소
+                console.log(e.target.value);//이벤트가 일어나는 시점에 입력된값
+            };
+        </script>
+    </body>
+</html>
