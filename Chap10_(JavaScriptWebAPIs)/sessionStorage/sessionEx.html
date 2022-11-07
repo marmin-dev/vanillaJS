@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title></title>
+    </head>
+    <body>
+       <script>
+        if(typeof Storage !== "undefined"){
+            sessionStorage.setItem("title", "The Great");
+            //세션 스토리지에 title 키에 The Great 저장
+        }
+        const users=[
+            {id:1,name:"marmin"},
+            {id:2,name:"park"},
+        ];
+        sessionStorage.setItem("users",JSON.stringify(users));
+        //세션스토리지에 users 키에 users 배열을 문자열로 저장
+        if(typeof Storage !== "undefined"){
+            console.log(sessionStorage.getItem("title"));
+            console.log(JSON.parse(sessionStorage.getItem("users")));
+            //배열을 문자열로 변환해서 저장한 데이터는 읽어올 때 다시 배열로 변환해야함
+        }
+        sessionStorage.removeItem("title");
+       </script> 
+    </body>
+</html>

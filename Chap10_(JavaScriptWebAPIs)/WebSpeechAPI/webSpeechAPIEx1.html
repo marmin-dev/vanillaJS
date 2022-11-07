@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            let recognition = null;
+
+            function checkCompatibility(){
+                recognition = new SpeechRecognitionAlternative();
+                if(!recognition){//web speech api사용불가능
+                    alert("you cannot use speech api");
+                }
+
+                recognition.l ="en";
+            }
+        </script>
+    </body>
+</html>
