@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <input type="text" onkeydown="checkInt(event)" onkeyup="checkKr(event);"/>
+        <input type="text" onkeydown="checkFloat(event)" onkeyup="checkK(event);"/>
+        <input type="text" id="num1"/>
+        <input type="text" id="num2"/>
+        <script>
+            function checkInt(e){
+                if(
+                    !(
+                        (e.keyCode >= 48 && e.keyCode <= 57)|| //0-9
+                        e.keyCode == 8||//백스페이스
+                        e.keyCode == 46||//delete
+                        e.keyCode == 37||//왼쪽 방향키
+                        e.keyCode ==39//오른쪽 방향키
+                    )
+                ){
+                    e.preventDefault();
+                    //이벤트가 keyup까지 진행이 되어야 input필드에 값이 입력이 되는데,
+                    //여기서 이벤트를 중단 시켜 값이 입력되지 않도록 중단 시킨다.
+                }
+            }
+            function checkKr(e){
+                e.target.value = e.target.value.replace(/[^0-9]/gi,"");
+            }
+            function checkFloat(e){
+                if(
+                    !(
+                        (e.keyCode >= 48 && e.keyCode <= 57)|| //0-9
+                        e.keyCode == 8||//백스페이스
+                        e.keyCode == 46||//delete
+                        e.keyCode == 37||//왼쪽 방향키
+                        e.keyCode ==39||//오른쪽 방향키
+                        e.keyCode == 190
+                    )
+                ){
+                    e.preventDefault();
+                    //이벤트가 keyup까지 진행이 되어야 input필드에 값이 입력이 되는데,
+                    //여기서 이벤트를 중단 시켜 값이 입력되지 않도록 중단 시킨다.
+                }
+            }
+            function checkK(e){
+                e.target.value = e.target.value.replace(/[^0-9]\./gi,"");
+            }
+            function setField(eleId,type){
+                if(type == "int"){
+                    document.getElementById(eleId).addEventListener("keydown",checkInt);
+                    document.getElementById(eleId).addEventListener("keyup",checkKr);
+                }else if(type == float){
+                    document
+                    .getElementById(eleId)
+                    .addEventListener("keydown",checkFloat);
+                    document.getElementById(eleId).addEventListener("keyup",checkK);
+                }
+            }
+            setField("num1","int");
+            setField("num2","float");
+        </script>
+    </body>
+</html>
