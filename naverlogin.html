@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Document</title>
+        <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+        charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="naverIdLogin"></div>
+        <script>
+            const naverLogin=new naver.LoginWithNaverId({
+                clientId:"lgExUvL1mobRaePPxAo8",
+                callbackUrl:"http://localhost:5500/naverlogin.html",
+                //개발자 등록 센터에 등록한 callback Url
+                isPopup:false,//팝업을 통한 연동처리여부
+                loginButton:{color:"green",type:3,height:60},
+            });
+
+            //설정 정보를 초기화하고 연동을 준비
+            naverLogin.init("네이버 앱 키");
+            function getLoginStatus(){
+                naverLogin.getLoginStatus((status)=>{
+                    if(status){
+                        //status가 true 면 로그인된 상태이다
+                        console.log(status);
+                        console.log(naverLogin.user);
+
+                        //필수적으로 받아야하는 프로필 정보가 있다면 callback 처리 시점에 체크
+                        let email = naverLogin.user.getEmail();
+                        if(email == undefined || email==null){
+                            alert("이메일은 필수정보입니다. 정보제공을 동의해주세요");
+                            naverLogin.reprompt();
+                            return;
+                        }
+                    }else{
+                        console.log("callback 처리에 실패");
+                    }
+                });
+            }
+            getLoginStatus();
+        </script>
+    </body>
+</html>

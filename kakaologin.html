@@ -11,7 +11,7 @@
         로그아웃</button>
         
        <script>
-        Kakao.init();
+        Kakao.init("앱 키");
         function kakaoLogin(){
             Kakao.Auth.login({
                 scope:"profile_nickname,account_email",//동의 항목에서 설정한 id와 일치해야함
@@ -34,6 +34,19 @@
                     console.log(error);
                 },
             });
+        }
+        function kakaoLogout(){
+            if(Kakao.Auth.getAccessToken()){
+                //로그인을 했으면 Access Token이 발급되어 있다. 없으면 아직 로그인 하지 않은것이다
+                console.log("Not logged in");
+                return;
+            }
+            Kakao.Auth.logout((res)=>{
+            console.log(window.Kakao.Auth.getAccessToken());
+            console.log(res);
+            document.getElementById("custom-login-btn").style.display="";
+            document.getElementById("logout-btn").style.display="none";
+        });
         }
        </script>
     </body>
