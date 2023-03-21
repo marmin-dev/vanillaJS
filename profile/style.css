@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pro-box{
+    background-color:rgba(0, 150, 255, 0.3);
+    text-align: center;
+    padding:40px 90px;
+    color:#fff;
+    position: relative;
+    border-radius: 10px;
+}
+.pro-pic{
+    width: 150px;
+    border-radius: 50%;
+    background: #fff;
+    padding:6px;
+    margin-top: 40px;
+}
+.logo{
+    width: 90px;
+}
+
+.clicker:hover{
+    color:blue;
+    cursor: pointer;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Hello! It's Marmin</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="pro-box" id="first">
+                <img src="IMG_0431.JPG" class="pro-pic clicker" id="marmin" onclick="marminshow()">
+                <h2>박태욱</h2>
+                <p>안녕하세요 발전하는 개발자 박태욱입니다</p>
+                <br>
+                <p>자세한 내용을 보려면 사진을 클릭해주세요</p>
+            </div>
+        <div class="pro-box" id="second" style="display:none;">
+            <h2>언어</h2>
+            <p>제가 공부한 언어는</p>
+            <p><strong>JAVA</strong></p>
+            <p><strong>Python</strong></p>
+            <p><strong>HTML,CSS,JS</strong></p>
+            <p><strong>C</strong></p>
+            <p><strong>SQL</strong></p>
+            <br>
+            <p onclick="gothird()" class="clicker">계속 보려면 <strong>Click!</strong></p>
+        </div>
+        <div class="pro-box" id="third" style="display:none;">
+            <h2>공부한것들</h2>
+            <p>제가 공부한 프레임워크 라이브러리 DB 등등</p>
+            <p><strong>SpringBoot</strong></p>
+            <p><strong>Django</strong></p>
+            <p><strong>React.js</strong></p>
+            <p><strong>Docker</strong></p>
+            <p><strong>VanillaJs</strong></p>
+            <p><strong>MySQL</strong></p>
+            <p onclick="golast()" class="clicker">계속 보려면 <strong>Click!</strong></p>
+        </div>
+        <div class="pro-box" id="last" style="display:none;">
+            <h1>!목표!</h1>
+            <br>
+            <input type="checkbox" name="goal1">
+            <label for="goal1"><strong>올해 개발 분야로 취직하기</strong></label>
+            <br>
+            <br>
+            <input type="checkbox" name="goal2">
+            <label for="goal2"><strong>세상에서 널리쓰이는 프로젝트 참여</strong></label>
+            <br>
+            <br>
+            <p onclick="golink()" class="clicker">계속 보려면 <strong>Click!</strong></p>
+        </div>
+        <div class="pro-box" id="link" style="display:none;">
+            <h1>Marmin 깃허브 노션</h1>
+            <img src="github.png" class="logo clicker" onclick="gogit()">
+            <br>
+            <img src="notion.png" class="logo clicker" onclick="gonotion()">
+        </div>
+    </div>
+        
+</html>
+<script>
+   function marminshow(){
+    first=document.getElementById('first');
+    second=document.getElementById('second');
+    first.style.display = 'none';
+    second.style.display='block';
+   }
+   function gothird(){
+    second=document.getElementById('second');
+    third=document.getElementById('third');
+    second.style.display = 'none';
+    third.style.display='block';
+   }
+   function golast(){
+    last=document.getElementById('last');
+    third=document.getElementById('third');
+    third.style.display = 'none';
+    last.style.display='block';
+   }
+   function golink(){
+    last=document.getElementById('last');
+    link=document.getElementById('link');
+    last.style.display = 'none';
+    link.style.display='block';
+   }
+   function gogit(){
+    window.location.href='https://github.com/marmin-dev';
+   }
+   function gonotion(){
+    window.location.href="https://marmindev.notion.site/IT-1ccb391d78844eddaeae38eb717613e2";
+   }
+</script>
