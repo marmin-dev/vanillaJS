@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title><i class='bx bxs-book-heart' ></i>booker</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Booker</a>
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <button class="btnLogin-popup">Login</button>
+            </nav>
+        </header>
+        <section class="section-home">
+            <div class="booker-list">
+                <h2>Marmin</h2>
+                <p>안녕하세요! Marmin님!</p>
+                <div class="profile-ca">
+                    <p class="profile-sel" onclick="go()">내가 추천한 책</p>
+                    <p class="profile-sel">내가 댓글단 책</p>
+                </div>
+            </div>
+            <script>
+                function go(){
+                    window.location.href = window.location.href + '?sa=comment'
+                }
+                console.log(window.location.pathname)
+            </script>
+        </section>
+    </body>
+</html>
