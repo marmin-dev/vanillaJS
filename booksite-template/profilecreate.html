@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title><i class='bx bxs-book-heart' ></i>booker</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Booker</a>
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <button class="btnLogin-popup">Login</button>
+            </nav>
+        </header>
+        <section class="section-home">
+            <div class="booker-list" style="display:flex; justify-content:center">
+                <h2>나를 소개합니다</h2>
+               <div class="create-profile">
+                <form method="POST" enctype="multipart/form-data" class="profile-create">
+                    <!-- {% csrf_token %} -->
+                    
+                    <input type="text" name="title" id="id_title" class="profile-text" placeholder="내이름은?">
+                  
+                    
+                    <textarea name="content" id="id_content" class="profile-textarea" placeholder="나를 소개해보세요!"></textarea>
+                   
+                    
+                    <input type="file" name="image" id="id_image" >
+                  
+                    <button type="submit" class="book-btn" style="margin-top: 30px ;">게시물 작성</button>
+                  </form>
+               </div>
+            </div>
+        </section>
+    </body>
+</html>
